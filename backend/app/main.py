@@ -12,7 +12,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api import health, ingestion, models as models_router
+from app.api import drift, health, ingestion, models as models_router
 from app.core.init_db import init_db
 from app.core.logging import logger, setup_logging
 
@@ -51,6 +51,7 @@ app.add_middleware(
 app.include_router(health.router)
 app.include_router(models_router.router, prefix="/api/v1")
 app.include_router(ingestion.router, prefix="/api/v1")
+app.include_router(drift.router, prefix="/api/v1")
 
 
 @app.get("/", include_in_schema=False)
