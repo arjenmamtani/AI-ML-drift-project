@@ -128,4 +128,4 @@ class HealthResponse(BaseModel):
     status: str
     db: str
     redis: str
-    version: str = "0.1.0"
+    version: str = "0.2.0"

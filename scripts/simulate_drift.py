@@ -196,7 +196,7 @@ def main():
 
     rng = np.random.default_rng(args.seed)
     drift_at = args.drift_at if args.drift_at is not None else args.n // 2
-    start_time = datetime.now(timezone.utc) - timedelta(hours=2)
+    start_time = datetime.now(timezone.utc) - timedelta(minutes=90)
 
     print(f"\n{'='*60}")
     print(f"  Drift Sentinel — Data Simulator")
